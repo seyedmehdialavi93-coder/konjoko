@@ -1,0 +1,1 @@
+export async function GET() { const rates = [{ flag: "USD", code: "USD", name: "???? ??????", base: 920000, change: 5000, up: true },{ flag: "AED", code: "AED", name: "???? ??????", base: 251800, change: 1100, up: false },{ flag: "CNY", code: "CNY", name: "???? ???", base: 127400, change: 1800, up: true }]; return Response.json({ rates }); }

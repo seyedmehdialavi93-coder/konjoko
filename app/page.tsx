@@ -113,7 +113,7 @@ const TICKER_ITEMS = [
   { text: "خرید کالا از دبی، چین، ترکیه", code: "✦", price: "و بازارهای جهانی", up: true, pct: "" },
 ];
 
-const WHATSAPP_URL = "https://wa.me/00000000000";
+const WHATSAPP_URL = "https://wa.me/971562913000";
 
 // ── WHATSAPP ICON ─────────────────────────────────────────────────────────────
 function WhatsAppIcon({ size = 22 }: { size?: number }) {
