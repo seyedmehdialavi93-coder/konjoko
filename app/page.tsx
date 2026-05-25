@@ -114,7 +114,83 @@ const TICKER_ITEMS = [
 ];
 
 const WHATSAPP_URL = "https://wa.me/971562913000";
+// ── KONJOKO AI ────────────────────────────────────────────────────────────────
+function KonjokoAI() {
+  const [input, setInput] = useState("");
+  const [messages, setMessages] = useState<{role:string,text:string}[]>([]);
+  const [loading, setLoading] = useState(false);
 
+  const send = async () => {
+    if (!input.trim()) return;
+    const userMsg = input;
+    setInput("");
+    setMessages(prev => [...prev, {role:"user", text:userMsg}]);
+    setLoading(true);
+    try {
+      const res = await fetch("/api/konjoko", {
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({message: userMsg}),
+      });
+      const data = await res.json();
+      setMessages(prev => [...prev, {role:"ai", text:data.reply}]);
+    } catch {
+      setMessages(prev => [...prev, {role:"ai", text:"خطایی رخ داد، دوباره تلاش کنید"}]);
+    }
+    setLoading(false);
+  };
+
+  return (
+    <section style={{padding:"90px 24px",position:"relative",zIndex:1,background:"rgba(5,15,31,0.5)"}}>
+      <div style={{maxWidth:800,margin:"0 auto"}}>
+        <div style={{textAlign:"center",marginBottom:40}}>
+          <h2 style={{fontSize:"clamp(24px,4vw,38px)",fontWeight:800,marginBottom:14}}>
+            <span className="gradient-text">کنجوکو کن</span> ✦
+          </h2>
+          <p style={{fontSize:15,color:"#94a3b8"}}>بنویس چی میخوای، AI کنجوکو راهنماییت میکنه</p>
+        </div>
+        <div className="glass-card" style={{padding:24,minHeight:300,marginBottom:20,display:"flex",flexDirection:"column",gap:16,maxHeight:400,overflowY:"auto"}}>
+          {messages.length === 0 && (
+            <div style={{color:"#475569",textAlign:"center",marginTop:80}}>مثلاً بنویس: «میخوام از دبی گوشی بخرم»</div>
+          )}
+          {messages.map((m,i) => (
+            <div key={i} style={{
+              display:"flex",justifyContent:m.role==="user"?"flex-end":"flex-start",
+            }}>
+              <div style={{
+                maxWidth:"80%",padding:"12px 16px",borderRadius:12,fontSize:14,lineHeight:1.8,
+                background:m.role==="user"?"linear-gradient(135deg,#0ea5e9,#22d3ee)":"rgba(14,165,233,0.07)",
+                border:m.role==="ai"?"1px solid rgba(14,165,233,0.18)":"none",
+                color:m.role==="user"?"#fff":"#f0f9ff",
+              }}>{m.text}</div>
+            </div>
+          ))}
+          {loading && (
+            <div style={{color:"#22d3ee",fontSize:13}}>کنجوکو داره فکر میکنه...</div>
+          )}
+        </div>
+        <div style={{display:"flex",gap:12}}>
+          <input
+            value={input}
+            onChange={e=>setInput(e.target.value)}
+            onKeyDown={e=>e.key==="Enter"&&send()}
+            placeholder="چی میخوای کنجوکو کنی؟"
+            style={{
+              flex:1,padding:"14px 18px",borderRadius:12,
+              background:"rgba(14,165,233,0.07)",
+              border:"1px solid rgba(14,165,233,0.18)",
+              color:"#f0f9ff",fontSize:14,fontFamily:"Vazirmatn,sans-serif",
+              outline:"none",
+            }}
+          />
+          <button onClick={send} className="btn-cta" style={{padding:"14px 24px",fontSize:14}}>
+            کنجوکو کن ✦
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
 // ── WHATSAPP ICON ─────────────────────────────────────────────────────────────
 function WhatsAppIcon({ size = 22 }: { size?: number }) {
   return (
@@ -148,20 +224,25 @@ function useFadeIn(delay = 0) {
   };
 }
 
-// ── LIVE RATES HOOK ───────────────────────────────────────────────────────────
 function useLiveRates() {
   const [rates, setRates] = useState(CURRENCIES.map((c) => ({ ...c })));
+
   useEffect(() => {
-    const id = setInterval(() => {
-      setRates((prev) =>
-        prev.map((r) => {
-          const delta = Math.round((Math.random() - 0.48) * r.base * 0.002);
-          return { ...r, base: r.base + delta, change: Math.abs(delta), up: delta >= 0 };
-        })
-      );
-    }, 4000);
+    const fetchRates = async () => {
+      try {
+        const res = await fetch("/api/rates");
+        const data = await res.json();
+        if (data.rates) setRates(data.rates);
+      } catch {
+        console.log("خطا در دریافت نرخ");
+      }
+    };
+
+    fetchRates();
+    const id = setInterval(fetchRates, 300000);
     return () => clearInterval(id);
   }, []);
+
   return rates;
 }
 
@@ -742,7 +823,8 @@ export default function KonjokoPage() {
           </div>
         </div>
       </section>
-
+{/* ── AI KONJOKO ── */}
+<KonjokoAI />
       {/* ── FOOTER ── */}
       <footer style={{
         padding:"48px 24px",
