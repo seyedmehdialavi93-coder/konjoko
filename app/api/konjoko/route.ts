@@ -1,6 +1,5 @@
 export async function POST(req: Request) {
   const { message } = await req.json();
-
   const response = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: {
@@ -11,10 +10,11 @@ export async function POST(req: Request) {
     body: JSON.stringify({
       model: "claude-haiku-4-5",
       max_tokens: 1024,
-      system: "تو دستیار هوشمند کنجوکو هستی. همیشه به فارسی جواب بده.",
+      system: "تو دستیار کنجوکو هستی. به فارسی جواب بده.",
       messages: [{ role: "user", content: message }],
     }),
   });
-
   const data = await response.json();
-  const text
+  const text = data.content?.[0]?.text || data.error?.message || "خطا";
+  return Response.json({ reply: text });
+}
