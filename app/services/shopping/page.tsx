@@ -2,43 +2,43 @@
 import { useState } from "react";
 
 const WHOLESALE_SITES = [
-  { name: "Alibaba", country: "CN", color: "#FF6A00", region: "چین" },
-  { name: "1688", country: "CN", color: "#E31837", region: "چین" },
-  { name: "DHgate", country: "CN", color: "#0066CC", region: "چین" },
-  { name: "Made-in-China", country: "CN", color: "#C8102E", region: "چین" },
-  { name: "Global Sources", country: "CN", color: "#003087", region: "چین" },
-  { name: "IndiaMART", country: "IN", color: "#FF6B35", region: "هند" },
-  { name: "TradeIndia", country: "IN", color: "#1B5E20", region: "هند" },
-  { name: "Amazon Business", country: "US", color: "#FF9900", region: "آمریکا" },
-  { name: "ThomasNet", country: "US", color: "#003366", region: "آمریکا" },
-  { name: "Faire", country: "EU", color: "#5B4FCF", region: "اروپا" },
-  { name: "Europages", country: "EU", color: "#003399", region: "اروپا" },
-  { name: "EC21", country: "AS", color: "#00897B", region: "آسیا" },
-  { name: "HKTDC", country: "HK", color: "#C8102E", region: "آسیا" },
-  { name: "Trendyol B2B", country: "TR", color: "#F27A1A", region: "ترکیه" },
-  { name: "Hepsiburada B2B", country: "TR", color: "#FF6000", region: "ترکیه" },
+  { name: "Alibaba", country: "🇨🇳", color: "#FF6A00", region: "چین" },
+  { name: "1688", country: "🇨🇳", color: "#E31837", region: "چین" },
+  { name: "DHgate", country: "🇨", color: "#0066CC", region: "چین" },
+  { name: "Made-in-China", country: "🇨🇳", color: "#C8102E", region: "چین" },
+  { name: "Global Sources", country: "🇨🇳", color: "#003087", region: "چین" },
+  { name: "IndiaMART", country: "🇮🇳", color: "#FF6B35", region: "هند" },
+  { name: "TradeIndia", country: "🇮🇳", color: "#1B5E20", region: "هند" },
+  { name: "Amazon Business", country: "🇺🇸", color: "#FF9900", region: "آمریکا" },
+  { name: "ThomasNet", country: "🇺🇸", color: "#003366", region: "آمریکا" },
+  { name: "Faire", country: "🇪🇺", color: "#5B4FCF", region: "اروپا" },
+  { name: "Europages", country: "🇪🇺", color: "#003399", region: "اروپا" },
+  { name: "EC21", country: "🌏", color: "#00897B", region: "آسیا" },
+  { name: "HKTDC", country: "🇭🇰", color: "#C8102E", region: "آسیا" },
+  { name: "Trendyol B2B", country: "🇹🇷", color: "#F27A1A", region: "ترکیه" },
+  { name: "Hepsiburada B2B", country: "🇹🇷", color: "#FF6000", region: "ترکیه" },
 ];
 
 const RETAIL_SITES = [
-  { name: "AliExpress", country: "CN", color: "#FF4747", region: "چین" },
-  { name: "Temu", country: "CN", color: "#FF5733", region: "چین" },
-  { name: "Shein", country: "CN", color: "#222222", region: "چین" },
-  { name: "JD.com", country: "CN", color: "#C0392B", region: "چین" },
-  { name: "Amazon", country: "US", color: "#FF9900", region: "آمریکا" },
-  { name: "eBay", country: "US", color: "#E53238", region: "آمریکا" },
-  { name: "Walmart", country: "US", color: "#0071CE", region: "آمریکا" },
-  { name: "Etsy", country: "US", color: "#F56400", region: "آمریکا" },
-  { name: "Sephora", country: "US", color: "#111111", region: "آمریکا" },
-  { name: "Noon", country: "AE", color: "#F5C518", region: "امارات" },
-  { name: "Amazon.ae", country: "AE", color: "#FF9900", region: "امارات" },
-  { name: "Sephora.ae", country: "AE", color: "#111111", region: "امارات" },
-  { name: "Namshi", country: "AE", color: "#6C3483", region: "امارات" },
-  { name: "Flipkart", country: "IN", color: "#2874F0", region: "هند" },
-  { name: "Meesho", country: "IN", color: "#A020F0", region: "هند" },
-  { name: "ASOS", country: "GB", color: "#111111", region: "اروپا" },
-  { name: "Zalando", country: "EU", color: "#FF6900", region: "اروپا" },
-  { name: "Trendyol", country: "TR", color: "#F27A1A", region: "ترکیه" },
-  { name: "Hepsiburada", country: "TR", color: "#FF6000", region: "ترکیه" },
+  { name: "AliExpress", country: "🇨🇳", color: "#FF4747", region: "چین" },
+  { name: "Temu", country: "🇨🇳", color: "#FF5733", region: "چین" },
+  { name: "Shein", country: "🇨🇳", color: "#222222", region: "چین" },
+  { name: "JD.com", country: "🇨🇳", color: "#C0392B", region: "چین" },
+  { name: "Amazon", country: "🇺", color: "#FF9900", region: "آمریکا" },
+  { name: "eBay", country: "🇺🇸", color: "#E53238", region: "آمریکا" },
+  { name: "Walmart", country: "🇺🇸", color: "#0071CE", region: "آمریکا" },
+  { name: "Etsy", country: "🇺🇸", color: "#F56400", region: "آمریکا" },
+  { name: "Sephora", country: "🇺🇸", color: "#111111", region: "آمریکا" },
+  { name: "Noon", country: "🇦🇪", color: "#F5C518", region: "امارات" },
+  { name: "Amazon.ae", country: "🇦🇪", color: "#FF9900", region: "امارات" },
+  { name: "Sephora.ae", country: "🇦🇪", color: "#111111", region: "امارات" },
+  { name: "Namshi", country: "🇦🇪", color: "#6C3483", region: "امارات" },
+  { name: "Flipkart", country: "🇮🇳", color: "#2874F0", region: "هند" },
+  { name: "Meesho", country: "🇮🇳", color: "#A020F0", region: "هند" },
+  { name: "ASOS", country: "🇬🇧", color: "#111111", region: "اروپا" },
+  { name: "Zalando", country: "🇪", color: "#FF6900", region: "اروپا" },
+  { name: "Trendyol", country: "🇹🇷", color: "#F27A1A", region: "ترکیه" },
+  { name: "Hepsiburada", country: "🇹🇷", color: "#FF6000", region: "ترکیه" },
 ];
 
 const FILTERS = ["همه", "چین", "هند", "آمریکا", "امارات", "اروپا", "ترکیه", "آسیا"];
@@ -78,122 +78,257 @@ export default function ShoppingPage() {
     setLoading(false);
   };
 
+  const renderResult = (text: string) => {
+    return text.split("\n").map((line, i) => {
+      const urlMatch = line.match(/(https?:\/\/[^\s]+)/);
+      if (urlMatch) {
+        const url = urlMatch[1];
+        const label = line.replace(url, "").replace(/\*\*/g, "").trim();
+        return (
+          <p key={i} style={{ marginBottom: 8, display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+            {label && <span style={{ color: "#334155" }}>{label}</span>}
+            <a href={url} target="_blank" rel="noopener noreferrer"
+              style={{ color: "#0ea5e9", textDecoration: "none", fontWeight: 600, fontSize: 13,
+                background: "rgba(14,165,233,0.08)", padding: "3px 10px", borderRadius: 20,
+                border: "1px solid rgba(14,165,233,0.2)" }}>
+              باز کردن ↗
+            </a>
+          </p>
+        );
+      }
+      if (!line.trim()) return <br key={i} />;
+      return (
+        <p key={i} style={{ marginBottom: 6, lineHeight: 1.8, color: "#334155" }}>
+          {line.replace(/\*\*/g, "")}
+        </p>
+      );
+    });
+  };
+
   return (
-    <div style={{ minHeight: "100vh", background: "#F7F5F0", fontFamily: "Tahoma, sans-serif", direction: "rtl" }}>
+    <div style={{ minHeight: "100vh", background: "#020814", fontFamily: "'Vazirmatn', Tahoma, sans-serif", direction: "rtl" }}>
       <style>{`
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        .card { transition: all 0.2s; }
-        .card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.1) !important; }
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { direction: rtl; }
+        .site-card { transition: all 0.25s ease; cursor: default; }
+        .site-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(14,165,233,0.15) !important; border-color: rgba(14,165,233,0.35) !important; }
         button { cursor: pointer; border: none; font-family: inherit; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-        .fade { animation: fadeIn 0.3s ease; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-up { animation: fadeUp 0.4s ease; }
         @keyframes spin { to { transform: rotate(360deg); } }
         .spin { animation: spin 1s linear infinite; display: inline-block; }
-        a { color: #C8A96E; }
+        @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.85)} }
+        .pulse { animation: pulse 1.5s ease-in-out infinite; }
+        .filter-btn { transition: all 0.15s ease; }
+        .filter-btn:hover { background: rgba(14,165,233,0.15) !important; color: #f0f9ff !important; }
+        .mode-btn { transition: all 0.2s ease; }
+        a { text-decoration: none; }
       `}</style>
 
-      <div style={{ background: "#1A1A1A", padding: "18px 28px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{ width: 34, height: 34, borderRadius: 8, background: "linear-gradient(135deg, #C8A96E, #E8C98A)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, color: "#1A1A1A" }}>K</div>
-          <span style={{ color: "#fff", fontWeight: 700, fontSize: 17 }}>کنجوکو</span>
-        </div>
-        <span style={{ color: "#C8A96E", fontSize: 13 }}>خرید هوشمند از سراسر جهان</span>
-      </div>
+      {/* Background */}
+      <div style={{
+        position: "fixed", inset: 0, zIndex: 0,
+        background: "radial-gradient(ellipse 80% 60% at 20% 10%, rgba(14,165,233,0.1) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 80% 80%, rgba(34,211,238,0.06) 0%, transparent 55%), #020814"
+      }} />
+      <div style={{
+        position: "fixed", inset: 0, zIndex: 0,
+        backgroundImage: "linear-gradient(rgba(14,165,233,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(14,165,233,0.03) 1px,transparent 1px)",
+        backgroundSize: "60px 60px",
+      }} />
 
-      <div style={{ maxWidth: 860, margin: "0 auto", padding: "36px 20px" }}>
-
-        <div style={{ textAlign: "center", marginBottom: 36 }}>
-          <h1 style={{ fontSize: 30, fontWeight: 800, color: "#1A1A1A", marginBottom: 10 }}>خرید کالا از سراسر جهان</h1>
-          <p style={{ color: "#888", fontSize: 15 }}>از بهترین سایت‌های بین‌المللی براتون سرچ می‌کنیم</p>
-        </div>
-
-        <div style={{ display: "flex", background: "#fff", borderRadius: 12, padding: 5, marginBottom: 28, boxShadow: "0 2px 10px rgba(0,0,0,0.06)", gap: 4 }}>
-          {[{ id: "wholesale", label: "خرید عمده", icon: "📦", desc: "B2B" }, { id: "retail", label: "خرید خرد", icon: "🛍️", desc: "B2C" }].map((m) => (
-            <button key={m.id} onClick={() => { setMode(m.id); setActiveFilter("همه"); setResult(""); }}
-              style={{ flex: 1, padding: "12px 16px", borderRadius: 8, background: mode === m.id ? "#1A1A1A" : "transparent", color: mode === m.id ? "#fff" : "#888", transition: "all 0.2s" }}>
-              <div style={{ fontSize: 20, marginBottom: 3 }}>{m.icon}</div>
-              <div style={{ fontWeight: 700, fontSize: 14 }}>{m.label}</div>
-              <div style={{ fontSize: 11, opacity: 0.6 }}>{m.desc}</div>
-            </button>
-          ))}
-        </div>
-
-        <div style={{ background: "#fff", borderRadius: 14, padding: 22, marginBottom: 24, boxShadow: "0 2px 10px rgba(0,0,0,0.06)" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 14 }}>
-            <h2 style={{ fontSize: 15, fontWeight: 700, color: "#1A1A1A" }}>سایت‌هایی که سرچ می‌کنیم</h2>
-            <span style={{ background: "#F0EDE6", color: "#8B7355", fontSize: 11, padding: "3px 9px", borderRadius: 20, fontWeight: 600 }}>{filtered.length} سایت</span>
+      {/* Header */}
+      <header style={{
+        position: "sticky", top: 0, zIndex: 100,
+        background: "rgba(2,8,20,0.85)", backdropFilter: "blur(20px)",
+        borderBottom: "1px solid rgba(14,165,233,0.18)", padding: "0 28px",
+      }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 0" }}>
+          <a href="/" style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{ width: 38, height: 38, borderRadius: 9, background: "linear-gradient(135deg,#0ea5e9,#22d3ee)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 900, color: "#fff", fontSize: 16, boxShadow: "0 0 16px rgba(14,165,233,0.4)" }}>K</div>
+            <div>
+              <div style={{ fontSize: 15, fontWeight: 800, background: "linear-gradient(135deg,#0ea5e9,#22d3ee)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", letterSpacing: 1 }}>KONJOKO</div>
+              <div style={{ fontSize: 11, color: "#64748b" }}>کنجوکو</div>
+            </div>
+          </a>
+          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <a href="/" style={{ color: "#94a3b8", fontSize: 13, padding: "6px 12px", borderRadius: 8, transition: "all 0.2s" }}>خانه</a>
+            <a href="#" style={{ color: "#0ea5e9", fontSize: 13, padding: "6px 12px", borderRadius: 8, background: "rgba(14,165,233,0.08)", border: "1px solid rgba(14,165,233,0.2)" }}>خرید کالا</a>
+            <a href="/#support" style={{ background: "linear-gradient(135deg,#0ea5e9,#22d3ee)", color: "#fff", fontSize: 13, fontWeight: 700, padding: "8px 18px", borderRadius: 9, boxShadow: "0 0 16px rgba(14,165,233,0.3)" }}>کنجوکو کن ✦</a>
           </div>
-          <div style={{ display: "flex", gap: 7, flexWrap: "wrap", marginBottom: 14 }}>
-            {FILTERS.map((f) => (
-              <button key={f} onClick={() => { setActiveFilter(f); setResult(""); }}
-                style={{ padding: "5px 12px", borderRadius: 20, fontSize: 12, background: activeFilter === f ? "#1A1A1A" : "#F7F5F0", color: activeFilter === f ? "#fff" : "#666", fontWeight: activeFilter === f ? 600 : 400 }}>
-                {f}
+        </div>
+      </header>
+
+      <div style={{ position: "relative", zIndex: 1 }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", padding: "48px 24px" }}>
+
+          {/* Hero */}
+          <div style={{ textAlign: "center", marginBottom: 52 }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(14,165,233,0.08)", border: "1px solid rgba(14,165,233,0.2)", borderRadius: 50, padding: "7px 16px", fontSize: 12, fontWeight: 600, color: "#22d3ee", marginBottom: 20 }}>
+              <span className="pulse" style={{ width: 7, height: 7, background: "#10b981", borderRadius: "50%", display: "inline-block" }} />
+              جستجوی هوشمند بین‌المللی
+            </div>
+            <h1 style={{ fontSize: "clamp(26px,4vw,46px)", fontWeight: 900, color: "#f0f9ff", marginBottom: 14, lineHeight: 1.3 }}>
+              خرید کالا از{" "}
+              <span style={{ background: "linear-gradient(135deg,#0ea5e9,#22d3ee)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+                سراسر جهان
+              </span>
+            </h1>
+            <p style={{ color: "#64748b", fontSize: 15, maxWidth: 500, margin: "0 auto" }}>
+              AI کنجوکو بین بهترین سایت‌های بین‌المللی برات سرچ می‌کنه
+            </p>
+          </div>
+
+          {/* Mode Toggle */}
+          <div style={{ display: "flex", background: "rgba(14,165,233,0.05)", border: "1px solid rgba(14,165,233,0.15)", borderRadius: 16, padding: 5, marginBottom: 36, gap: 4, maxWidth: 500, margin: "0 auto 36px" }}>
+            {[
+              { id: "wholesale", label: "خرید عمده", icon: "📦", desc: "B2B" },
+              { id: "retail", label: "خرید خرد", icon: "🛍️", desc: "B2C" },
+            ].map((m) => (
+              <button key={m.id} className="mode-btn" onClick={() => { setMode(m.id); setActiveFilter("همه"); setResult(""); }}
+                style={{ flex: 1, padding: "14px 20px", borderRadius: 12,
+                  background: mode === m.id ? "linear-gradient(135deg,#0ea5e9,#22d3ee)" : "transparent",
+                  color: mode === m.id ? "#fff" : "#64748b",
+                  boxShadow: mode === m.id ? "0 0 20px rgba(14,165,233,0.3)" : "none" }}>
+                <div style={{ fontSize: 20, marginBottom: 3 }}>{m.icon}</div>
+                <div style={{ fontWeight: 700, fontSize: 14 }}>{m.label}</div>
+                <div style={{ fontSize: 11, opacity: 0.7 }}>{m.desc}</div>
               </button>
             ))}
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(100px, 1fr))", gap: 8 }}>
-            {filtered.map((site, i) => (
-              <div key={i} className="card" style={{ background: "#F7F5F0", borderRadius: 10, padding: "10px 8px", textAlign: "center", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
-                <div style={{ width: 32, height: 32, borderRadius: 7, background: site.color, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 12, margin: "0 auto 6px" }}>
-                  {site.name.slice(0, 2)}
+
+          {/* Sites */}
+          <div style={{ background: "rgba(14,165,233,0.04)", border: "1px solid rgba(14,165,233,0.15)", borderRadius: 20, padding: 28, marginBottom: 28 }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 18 }}>
+              <h2 style={{ fontSize: 15, fontWeight: 700, color: "#f0f9ff" }}>
+                🌐 سایت‌هایی که سرچ می‌کنیم
+              </h2>
+              <span style={{ background: "rgba(14,165,233,0.1)", border: "1px solid rgba(14,165,233,0.2)", color: "#22d3ee", fontSize: 11, padding: "3px 10px", borderRadius: 20, fontWeight: 600 }}>
+                {filtered.length} سایت
+              </span>
+            </div>
+
+            {/* Filters */}
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap", marginBottom: 20 }}>
+              {FILTERS.map((f) => (
+                <button key={f} className="filter-btn" onClick={() => { setActiveFilter(f); setResult(""); }}
+                  style={{ padding: "6px 14px", borderRadius: 20, fontSize: 12, fontWeight: 500,
+                    background: activeFilter === f ? "linear-gradient(135deg,#0ea5e9,#22d3ee)" : "rgba(14,165,233,0.06)",
+                    color: activeFilter === f ? "#fff" : "#64748b",
+                    border: activeFilter === f ? "none" : "1px solid rgba(14,165,233,0.15)",
+                    boxShadow: activeFilter === f ? "0 0 12px rgba(14,165,233,0.3)" : "none" }}>
+                  {f}
+                </button>
+              ))}
+            </div>
+
+            {/* Site Cards */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(110px, 1fr))", gap: 10 }}>
+              {filtered.map((site, i) => (
+                <div key={i} className="site-card" style={{
+                  background: "rgba(14,165,233,0.04)", border: "1px solid rgba(14,165,233,0.12)",
+                  borderRadius: 12, padding: "14px 10px", textAlign: "center",
+                }}>
+                  <div style={{ width: 36, height: 36, borderRadius: 9, background: site.color, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 13, margin: "0 auto 8px", boxShadow: "0 4px 12px " + site.color + "44" }}>
+                    {site.name.slice(0, 2)}
+                  </div>
+                  <div style={{ fontSize: 11, fontWeight: 600, color: "#cbd5e1", marginBottom: 2 }}>{site.name}</div>
+                  <div style={{ fontSize: 10, color: "#475569" }}>{site.country}</div>
                 </div>
-                <div style={{ fontSize: 11, fontWeight: 600, color: "#333" }}>{site.name}</div>
-                <div style={{ fontSize: 10, color: "#aaa", marginTop: 2 }}>{site.country}</div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div style={{ background: "#1A1A1A", borderRadius: 14, padding: 24, marginBottom: 20 }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 5 }}>
-            <h2 style={{ color: "#fff", fontSize: 17, fontWeight: 700 }}>جستجوی هوشمند</h2>
-            {activeFilter !== "همه" && (
-              <span style={{ background: "#C8A96E", color: "#1A1A1A", fontSize: 11, padding: "3px 10px", borderRadius: 20, fontWeight: 700 }}>{activeFilter}</span>
-            )}
-          </div>
-          <p style={{ color: "#777", fontSize: 12, marginBottom: 14 }}>
-            {activeFilter === "همه" ? "از همه سایت‌های بین‌المللی" : "فقط از سایت‌های " + activeFilter}
-          </p>
-          <div style={{ display: "flex", gap: 8 }}>
-            <input value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={(e) => e.key === "Enter" && search()}
-              placeholder="اسم کالا یا لینک محصول..."
-              style={{ flex: 1, padding: "13px 16px", borderRadius: 9, border: "2px solid " + (focused ? "#C8A96E" : "transparent"), background: "#2A2A2A", color: "#fff", fontFamily: "inherit", fontSize: 14, outline: "none" }}
-              onFocus={() => setFocused(true)} onBlur={() => setFocused(false)} />
-            <button onClick={search} disabled={loading || !query.trim()}
-              style={{ padding: "13px 22px", borderRadius: 9, background: "linear-gradient(135deg, #C8A96E, #E8C98A)", color: "#1A1A1A", fontWeight: 700, fontSize: 14, opacity: loading || !query.trim() ? 0.6 : 1 }}>
-              {loading ? <span className="spin">⟳</span> : "جستجو"}
-            </button>
-          </div>
-          <div style={{ display: "flex", gap: 7, marginTop: 12, flexWrap: "wrap" }}>
-            {["لپتاپ گیمینگ", "ساعت هوشمند", "لوازم آرایشی", "پارچه عمده"].map((ex) => (
-              <button key={ex} onClick={() => setQuery(ex)}
-                style={{ padding: "4px 11px", borderRadius: 20, fontSize: 11, background: "#2A2A2A", color: "#777", border: "1px solid #333" }}>
-                {ex}
+          {/* Search Box */}
+          <div style={{ background: "rgba(14,165,233,0.06)", border: "1px solid rgba(14,165,233,0.2)", borderRadius: 20, padding: 28, marginBottom: 24, boxShadow: "0 0 40px rgba(14,165,233,0.08)" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 6 }}>
+              <h2 style={{ color: "#f0f9ff", fontSize: 17, fontWeight: 800 }}>
+                🔍 جستجوی هوشمند
+              </h2>
+              {activeFilter !== "همه" && (
+                <span style={{ background: "linear-gradient(135deg,#0ea5e9,#22d3ee)", color: "#fff", fontSize: 11, padding: "4px 12px", borderRadius: 20, fontWeight: 700 }}>
+                  {activeFilter}
+                </span>
+              )}
+            </div>
+            <p style={{ color: "#475569", fontSize: 13, marginBottom: 18 }}>
+              {activeFilter === "همه" ? "از همه سایت‌های بین‌المللی سرچ می‌کنه" : "فقط از سایت‌های " + activeFilter + " سرچ می‌کنه"}
+            </p>
+            <div style={{ display: "flex", gap: 10 }}>
+              <input value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={(e) => e.key === "Enter" && search()}
+                placeholder="اسم کالا یا لینک محصول..."
+                style={{ flex: 1, padding: "14px 18px", borderRadius: 12,
+                  border: "1px solid " + (focused ? "#0ea5e9" : "rgba(14,165,233,0.2)"),
+                  background: "rgba(14,165,233,0.05)", color: "#f0f9ff",
+                  fontFamily: "inherit", fontSize: 14, outline: "none", transition: "border-color 0.2s",
+                  boxShadow: focused ? "0 0 0 3px rgba(14,165,233,0.1)" : "none" }}
+                onFocus={() => setFocused(true)} onBlur={() => setFocused(false)} />
+              <button onClick={search} disabled={loading || !query.trim()}
+                style={{ padding: "14px 24px", borderRadius: 12,
+                  background: "linear-gradient(135deg,#0ea5e9,#22d3ee)",
+                  color: "#fff", fontWeight: 700, fontSize: 14,
+                  boxShadow: "0 0 20px rgba(14,165,233,0.3)",
+                  opacity: loading || !query.trim() ? 0.6 : 1,
+                  transition: "all 0.2s" }}>
+                {loading ? <span className="spin">⟳</span> : "جستجو"}
               </button>
-            ))}
+            </div>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 14 }}>
+              {["لپتاپ گیمینگ", "ساعت هوشمند", "لوازم آرایشی", "پارچه عمده"].map((ex) => (
+                <button key={ex} onClick={() => setQuery(ex)}
+                  style={{ padding: "5px 12px", borderRadius: 20, fontSize: 11,
+                    background: "rgba(14,165,233,0.05)", color: "#64748b",
+                    border: "1px solid rgba(14,165,233,0.15)", transition: "all 0.15s" }}>
+                  {ex}
+                </button>
+              ))}
+            </div>
           </div>
+
+          {/* Loading */}
+          {loading && (
+            <div style={{ background: "rgba(14,165,233,0.04)", border: "1px solid rgba(14,165,233,0.15)", borderRadius: 20, padding: 36, textAlign: "center" }}>
+              <div style={{ fontSize: 32, marginBottom: 12 }}>🔍</div>
+              <p style={{ color: "#64748b", fontSize: 14 }}>
+                در حال جستجو در سایت‌های {activeFilter !== "همه" ? activeFilter : "بین‌المللی"}...
+              </p>
+            </div>
+          )}
+
+          {/* Result */}
+          {result && !loading && (
+            <div className="fade-up" style={{ background: "rgba(14,165,233,0.04)", border: "1px solid rgba(14,165,233,0.2)", borderRadius: 20, padding: 28, boxShadow: "0 0 40px rgba(14,165,233,0.08)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20, paddingBottom: 16, borderBottom: "1px solid rgba(14,165,233,0.15)" }}>
+                <div style={{ width: 36, height: 36, borderRadius: 10, background: "linear-gradient(135deg,#0ea5e9,#22d3ee)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, boxShadow: "0 0 16px rgba(14,165,233,0.3)" }}>✨</div>
+                <div>
+                  <h3 style={{ fontSize: 15, fontWeight: 700, color: "#f0f9ff" }}>
+                    نتیجه برای: <span style={{ background: "linear-gradient(135deg,#0ea5e9,#22d3ee)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{query}</span>
+                  </h3>
+                  {activeFilter !== "همه" && <span style={{ fontSize: 11, color: "#475569" }}>فیلتر: {activeFilter}</span>}
+                </div>
+              </div>
+              <div style={{ fontSize: 14, color: "#94a3b8" }}>{renderResult(result)}</div>
+              <button onClick={() => { setResult(""); setQuery(""); }}
+                style={{ marginTop: 20, padding: "9px 20px", borderRadius: 10,
+                  background: "rgba(14,165,233,0.06)", border: "1px solid rgba(14,165,233,0.2)",
+                  color: "#64748b", fontSize: 13, transition: "all 0.2s" }}>
+                جستجوی جدید
+              </button>
+            </div>
+          )}
         </div>
-
-        {loading && (
-          <div style={{ background: "#fff", borderRadius: 14, padding: 28, textAlign: "center", boxShadow: "0 2px 10px rgba(0,0,0,0.06)" }}>
-            <div style={{ fontSize: 28, marginBottom: 10 }}>🔍</div>
-            <p style={{ color: "#888", fontSize: 13 }}>در حال جستجو...</p>
-          </div>
-        )}
-
-        {result && !loading && (
-          <div className="fade" style={{ background: "#fff", borderRadius: 14, padding: 24, boxShadow: "0 2px 10px rgba(0,0,0,0.06)" }}>
-            <h3 style={{ fontSize: 15, fontWeight: 700, color: "#1A1A1A", marginBottom: 14 }}>
-              نتیجه: <span style={{ color: "#C8A96E" }}>{query}</span>
-            </h3>
-            <div style={{ fontSize: 13, lineHeight: 2, color: "#333", whiteSpace: "pre-wrap" }}>{result}</div>
-            <button onClick={() => { setResult(""); setQuery(""); }}
-              style={{ marginTop: 16, padding: "9px 18px", borderRadius: 7, background: "#F7F5F0", color: "#888", fontSize: 12 }}>
-              جستجوی جدید
-            </button>
-          </div>
-        )}
       </div>
+
+      {/* Footer */}
+      <footer style={{ borderTop: "1px solid rgba(14,165,233,0.15)", padding: "28px 24px", position: "relative", zIndex: 1 }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
+          <p style={{ fontSize: 13, color: "#334155" }}>© ۱۴۰۴ کنجوکو. تمامی حقوق محفوظ است.</p>
+          <a href="https://wa.me/971562913000" target="_blank" rel="noopener noreferrer"
+            style={{ display: "flex", alignItems: "center", gap: 8, background: "linear-gradient(135deg,#25D366,#128C7E)", color: "#fff", padding: "9px 18px", borderRadius: 10, fontSize: 13, fontWeight: 700 }}>
+            💬 پشتیبانی واتساپ
+          </a>
+        </div>
+      </footer>
     </div>
   );
 }
