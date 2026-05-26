@@ -17,6 +17,6 @@ export async function POST(req: Request) {
   });
 
   const data = await response.json();
-  const text = data.content?.[0]?.text || "خطا در دریافت پاسخ";
+ const text = data.content?.[0]?.text || data.error?.message || JSON.stringify(data);
   return Response.json({ reply: text });
 }
