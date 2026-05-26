@@ -5,7 +5,7 @@ export async function POST(req: Request) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "x-api-key": "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",
+      "x-api-key": process.env.ANTHROPIC_API_KEY || "",
       "anthropic-version": "2023-06-01",
     },
     body: JSON.stringify({
