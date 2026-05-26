@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { label: "خرید کالا", href: "/services/shopping" },
   { label: "پرداخت ارزی", href: "/services/payment" },
   { label: "خدمات تجاری", href: "/services/business" },
+  { label: "ثبت درخواست", href: "/contact" },
   { label: "خدمات", href: "#services" },
   { label: "نرخ بازار", href: "#rates" },
   { label: "مراحل همکاری", href: "#steps" },
