@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 // ── DATA ──────────────────────────────────────────────────────────────────────
 
 const NAV_LINKS = [
-  { label: "خانه", href: "#home" },
+  { label: "خرید کالا", href: "/services/shopping" },
   { label: "خدمات", href: "#services" },
   { label: "نرخ بازار", href: "#rates" },
   { label: "مراحل همکاری", href: "#steps" },
