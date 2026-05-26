@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "کنجوکو | پلتفرم تجارت و پرداخت بین‌المللی",
-  description: "کنجوکو به ایرانیان کمک می‌کند تا پرداخت‌های بین‌المللی انجام دهند و کالا از دبی، چین و ترکیه تهیه کنند.",
+  description: "کنجوکو به ایرانیان کمک می‌کند تا پرداختهای بین‌المللی انجام دهند و کالا از دبی، چین و ترکیه تهیه کنند.",
   keywords: "پرداخت بین‌المللی, خرید از دبی, خرید از چین, حواله ارزی, کنجوکو",
   icons: {
-  icon: "/favicon.svg",
-},
+    icon: "/favicon.svg",
+  },
   openGraph: {
     title: "کنجوکو | پلتفرم تجارت بین‌المللی",
     description: "پرداخت بین‌المللی و خرید کالا از دبی، چین و ترکیه",
@@ -40,6 +40,9 @@ export default function RootLayout({
       dir="rtl"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <meta name="google-site-verification" content="Uc-LtqEL8GEvlcyb6Knp85SrrFn5DmzCV0GGzE" />
+      </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
