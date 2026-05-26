@@ -16,9 +16,7 @@ export const metadata: Metadata = {
   title: "کنجوکو | پلتفرم تجارت و پرداخت بین‌المللی",
   description: "کنجوکو به ایرانیان کمک می‌کند تا پرداخت‌های بین‌المللی انجام دهند و کالا از دبی، چین و ترکیه تهیه کنند.",
   keywords: "پرداخت بین‌المللی, خرید از دبی, خرید از چین, حواله ارزی, کنجوکو",
-  verification: {
-  google: "Uc-LtqEL8GEvlcyb6Knp85SrrFn5DmzCV0GGzE",
-},
+ 
   icons: {
   icon: "/favicon.svg",
 },
