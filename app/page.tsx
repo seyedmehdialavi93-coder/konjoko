@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 const NAV_LINKS = [
   { label: "خرید کالا", href: "/services/shopping" },
   { label: "پرداخت ارزی", href: "/services/payment" },
+  { label: "خدمات تجاری", href: "/services/business" },
   { label: "خدمات", href: "#services" },
   { label: "نرخ بازار", href: "#rates" },
   { label: "مراحل همکاری", href: "#steps" },
