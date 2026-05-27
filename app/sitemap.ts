@@ -4,11 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: "https://www.konjoko.com", lastModified: new Date() },
     { url: "https://www.konjoko.com/blog", lastModified: new Date() },
-    { url: "https://www.konjoko.com/blog/tajrobe-tajer-irani", lastModified: new Date() },
     { url: "https://www.konjoko.com/blog/kharid-omde-dubai-chin", lastModified: new Date() },
-    { url: "https://www.konjoko.com/blog/eshtebahaat-tajaran", lastModified: new Date() },
-    { url: "https://www.konjoko.com/blog/tamin-konande-chin", lastModified: new Date() },
-    { url: "https://www.konjoko.com/blog/havaleh-derham", lastModified: new Date() },
     { url: "https://www.konjoko.com/blog/kharid-az-dubai", lastModified: new Date() },
     { url: "https://www.konjoko.com/blog/pardakht-beinalmelli", lastModified: new Date() },
     { url: "https://www.konjoko.com/blog/kharid-az-chin", lastModified: new Date() },
