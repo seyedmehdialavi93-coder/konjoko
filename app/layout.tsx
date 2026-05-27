@@ -26,6 +26,20 @@ export const metadata: Metadata = {
     siteName: "کنجوکو",
     locale: "fa_IR",
     type: "website",
+    images: [
+      {
+        url: "https://i.ibb.co/VWvzd8Xt/konjoko-character-png.jpg",
+        width: 800,
+        height: 600,
+        alt: "کنجوکو - پلتفرم تجارت بین‌المللی",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "کنجوکو | پلتفرم تجارت بین‌المللی",
+    description: "پرداخت بین‌المللی و خرید کالا از دبی، چین و ترکیه",
+    images: ["https://i.ibb.co/VWvzd8Xt/konjoko-character-png.jpg"],
   },
 };
 
