@@ -37,6 +37,14 @@ export default function VardaatAzDubai() {
              </div>
            ))}
          </div>
+         <div style={{backgroundColor: "#111", borderRadius: "12px", padding: "24px", marginBottom: "32px"}}>
+           <p style={{color: "#94a3b8", marginBottom: "16px", fontSize: "0.9rem"}}>مقالات مرتبط:</p>
+           <div style={{display: "flex", flexDirection: "column", gap: "12px"}}>
+             <a href="/blog/kharid-az-dubai" style={{color: "#60a5fa", textDecoration: "none"}}>← چطور از دبی خرید کنیم؟</a>
+             <a href="/blog/havaleh-arzi" style={{color: "#60a5fa", textDecoration: "none"}}>← حواله ارزی چیست و چطور کار میکنه؟</a>
+             <a href="/blog/pardakht-beinalmelli" style={{color: "#60a5fa", textDecoration: "none"}}>← راهنمای پرداخت بین‌المللی برای ایرانیان</a>
+           </div>
+         </div>
          <div style={{backgroundColor: "#1e3a5f", borderRadius: "16px", padding: "32px", textAlign: "center", marginTop: "40px"}}>
            <p style={{fontSize: "1.25rem", fontWeight: "bold", marginBottom: "16px"}}>همین الان واردات از دبی را شروع کنید</p>
            <a href="https://wa.me/971562913000" style={{backgroundColor: "#22c55e", color: "white", padding: "12px 32px", borderRadius: "50px", fontWeight: "bold", textDecoration: "none", display: "inline-block"}}>ارتباط در واتساپ</a>
